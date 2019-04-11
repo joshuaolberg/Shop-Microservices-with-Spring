@@ -1,0 +1,10 @@
+insert into CART_ITEMS(CART_ITEM_ID, ARTICLE_ID, QUANTITY)
+values(100, 1000, 1),
+      (101, 1001, 1);
+
+insert into CART (CART_ID, NUMBER_OF_ARTICLES)
+values(1, 2);
+      
+insert into CART_CART_ITEMS(CART_ENTITY_CART_ID, CART_ITEMS_CART_ITEM_ID, CART_ITEMS_KEY)
+values(01, 100, 10000),
+(01, 101, 10001);
