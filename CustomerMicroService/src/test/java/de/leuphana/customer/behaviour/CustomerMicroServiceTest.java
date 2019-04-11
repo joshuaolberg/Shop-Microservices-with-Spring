@@ -32,8 +32,8 @@ public class CustomerMicroServiceTest {
 
 	@Test
 	public void test() {
-//		List<CustomerEntity> customer = customerController.getCustomers();
-//		Assert.assertNotNull(customer);
+		List<CustomerEntity> customer = customerController.getCustomers();
+		Assert.assertNotNull(customer);
 	}
 
 }
