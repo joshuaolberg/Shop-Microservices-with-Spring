@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+  eurekaserver:
+    image: eurekaserver
+    ports:
+      - "8888:8888"
+    networks:
+      - try
+  articlemicroservice:
+    image: articlemicroservice
+    ports:
+      - "8084:8084"
+    networks:
+      - try  
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8888/eureka 
+  ordermicroservice:
+    image: ordermicroservice
+    ports:
+      - "8083:8083"
+    networks:
+      - try  
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8888/eureka 
+  customermicroservice:
+    image: customermicroservice
+    ports:
+      - "8082:8082"
+    networks:
+      - try  
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8888/eureka
+  cartmicroservice:
+    image: cartmicroservice
+    ports:
+      - "8081:8081"
+    networks:
+      - try  
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8888/eureka         
+  shopmicroservice:
+    image: shopmicroservice
+    ports:
+      - "8080:8080"
+    networks:
+      - try  
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8888/eureka          
+networks:
+  try:
